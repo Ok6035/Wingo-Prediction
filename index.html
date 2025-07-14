@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jalwa AI Predictor v3</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div class="glass">
+    <h1>Jalwa AI Predictor</h1>
+
+    <label>Last 4 digits of current period
+      <input id="last4" maxlength="4" pattern="\d{4}">
+    </label>
+
+    <button id="go">🔮 Predict Next Period</button>
+
+    <div id="loader" class="hidden">⏳ Analysing …</div>
+
+    <section id="result" class="hidden">
+      <h3>Next Period <span id="nextPeriod"></span></h3>
+      <div class="prediction">
+        <span id="predNum"></span>
+        <span id="predBigSmall"></span>
+        <span id="predColour"></span>
+      </div>
+      <canvas id="confidenceChart" height="120"></canvas>
+    </section>
+
+    <section id="viz">
+      <canvas id="historyChart" height="200"></canvas>
+    </section>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
